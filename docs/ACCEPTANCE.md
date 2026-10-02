@@ -9,12 +9,14 @@ something new is run live.
 |---|---|---|
 | Separate repository; GRP untouched | Done | Built in its own directory and Git repository |
 | Fresh install + offline demo | Done | `uv sync`, `uv run msl demo`; run again from a fresh clone |
-| Tests, network blocked | 57 pass | `uv run pytest` |
+| Tests, network blocked | 58 pass | `uv run pytest` |
 | REST submit/status | **Fixture-tested** | `approved`, `staged`, `declined` (every problem kept), 401, malformed JSON, POST timeout (`outcome_unknown`, one request), connect error, bad id, token masking |
 | MCP adapter | **Fixture-tested** | Discovery, schema validation, allowlist, 401 inside an exception group, failure after a submit was sent (`outcome_unknown`), no session without a token |
 | Token provider | **Fixture-tested** | Missing helper, helper failure (masked), wrong audience, caching, near-expiry refresh |
 | Live: REST endpoint | Unauthenticated 401 only | `msl probe` with `MSL_TRANSPORT=rest` |
 | Live: MCP endpoint | Unauthenticated 401 + `WWW-Authenticate` | `msl probe` with `MSL_TRANSPORT=mcp` |
+| Live: MCP SDK session, invalid token | `sign_in_required`, 401, within seconds | The real `streamable_http_client` + `ClientSession` path, with an obviously fake token |
+| Local operations traced | Done | `prepare`, `preview` and every platform call write a trace |
 | Live: sign-in, `auth check`, `discover`, read-only tool | **Not run** | Needs the operator's login |
 | Live contribution | **Not tested** | — |
 | Mangrove contract or analysis | **Not available** | See SPRINT_NOTES.md |

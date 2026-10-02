@@ -16,7 +16,6 @@ from typing import Any
 from mangrove_sprint_lab.config import ConfigError, load_environment
 from mangrove_sprint_lab.platform.operations import Operations
 from mangrove_sprint_lab.platform.results import OperationResult
-from mangrove_sprint_lab.workflows.mangrove_step1 import prepare
 
 EXAMPLES = Path("data/examples")
 SAMPLE_EXPERIMENT = Path("data/experiments/synthetic_example.yml")
@@ -37,7 +36,7 @@ def demo(ops: Operations) -> int:
     """Offline walk-through on synthetic data. Sends nothing, needs no credentials."""
 
     _print({"step": "1. environment", **ops.describe()})
-    report = prepare(SAMPLE_EXPERIMENT, CATALOG, ops.environment.outputs_dir)
+    report = ops.prepare(SAMPLE_EXPERIMENT, CATALOG)
     _print({"step": "2. prepare the synthetic experiment", **report})
     for manifest in sorted((EXAMPLES / "manifests").glob("*.yml")):
         data_file = None
@@ -122,7 +121,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "resource":
         return _emit(ops.read_resource(args.uri))
     if args.command == "prepare":
-        _print(prepare(args.experiment, args.catalog, environment.outputs_dir))
+        _print(ops.prepare(args.experiment, args.catalog))
         return 0
     if args.command == "check":
         preview = ops.preview(args.manifest, args.file)

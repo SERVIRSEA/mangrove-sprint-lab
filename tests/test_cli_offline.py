@@ -48,3 +48,11 @@ def test_prepare_marks_method_pending_and_nothing_submitted(in_repo, capsys):
     assert report["method_status"] == "pending"
     assert report["submitted"] is False
     assert all(not source["missing_fields"] for source in report["sources"])
+
+
+def test_local_operations_are_traced(in_repo, capsys):
+    assert main(["demo"]) == 0
+    capsys.readouterr()
+    assert main(["traces", "-n", "20"]) == 0
+    operations = {trace["operation"] for trace in json.loads(capsys.readouterr().out)}
+    assert {"prepare", "preview"} <= operations

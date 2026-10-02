@@ -43,7 +43,8 @@ uv run msl demo
 
 - Bootstrapped from SIG's runbook and GRP's proven patterns. Python 3.12, uv, MCP SDK 1.30
   (pinned below 2.0; reason in CONNECTIONS.md).
-- **Live:** only unauthenticated 401 probes of both endpoints. The REST 401 has no
+- **Live:** unauthenticated 401 probes of both endpoints, and the real MCP SDK session with an
+  invalid token gives `sign_in_required`. The REST 401 has no
   `WWW-Authenticate`, although the runbook says it should.
 - **Next:**
   1. The operator signs in with `grp-login.py`.

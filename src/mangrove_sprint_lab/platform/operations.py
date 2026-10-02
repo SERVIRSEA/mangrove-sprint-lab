@@ -27,6 +27,7 @@ from mangrove_sprint_lab.platform.results import OperationResult
 from mangrove_sprint_lab.platform.token_provider import TokenProvider
 from mangrove_sprint_lab.redact import redact
 from mangrove_sprint_lab.traces import TraceLog
+from mangrove_sprint_lab.workflows.mangrove_step1 import prepare
 
 POLL_MAX_ATTEMPTS = 10
 POLL_MIN_INTERVAL = 5.0
@@ -151,6 +152,25 @@ class Operations:
     def preview(self, manifest_path: Path, data_file: Path | None = None) -> dict[str, Any]:
         """Everything a person must see before deciding to submit. Local; sends nothing."""
 
+        with self.traces.trace("preview", "local", self.environment.name) as trace:
+            preview = self._preview(manifest_path, data_file)
+            trace.outcome = "ok" if not preview["problems"] and not preview["gaps"] else "blocked"
+            trace.call(manifest=str(manifest_path), problems=sorted(preview["problems"]),
+                       gaps=len(preview["gaps"]))
+            preview["trace_id"] = trace.trace_id
+            return preview
+
+    def prepare(self, experiment: Path, catalog: Path) -> dict[str, Any]:
+        """Record and check an experiment locally (workflows.mangrove_step1). Sends nothing."""
+
+        with self.traces.trace("prepare", "local", self.environment.name) as trace:
+            report = prepare(experiment, catalog, self.environment.outputs_dir)
+            trace.call(experiment=str(experiment), method_status=report["method_status"],
+                       sources=len(report["sources"]))
+            report["trace_id"] = trace.trace_id
+            return report
+
+    def _preview(self, manifest_path: Path, data_file: Path | None) -> dict[str, Any]:
         document = load_manifest(manifest_path)
         checked = check_manifest(document)
         lab = document.get("x_lab") if isinstance(document.get("x_lab"), dict) else {}

@@ -123,6 +123,7 @@ outputs/                    traces and results (ignored by Git)
 | REST submit/status client | Fixture-tested only; no live submit made |
 | REST endpoint reachable, 401 without a token | Live-checked, unauthenticated |
 | MCP endpoint reachable, 401 + `WWW-Authenticate` without a token | Live-checked, unauthenticated |
+| Real MCP SDK session with an invalid token gives `sign_in_required` | Live-checked |
 | Sign-in, `auth check`, `discover`, a read-only tool call | **Not yet run**: needs the operator's login |
 | Live contribution | **Not tested** |
 | Mangrove contribution contract or analysis | **Does not exist yet**: see docs/SPRINT_NOTES.md |
