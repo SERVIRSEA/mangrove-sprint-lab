@@ -1,0 +1,79 @@
+{
+ "type": "FeatureCollection",
+ "x_lab": {
+  "synthetic": true,
+  "note": "SYNTHETIC: invented shapes near 0,0 for exercising the software offline. Not real mangroves, not evidence."
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "patch_id": "S1",
+    "label": "synthetic patch",
+    "source_date": "2020"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       0.01,
+       0.01
+      ],
+      [
+       0.03,
+       0.01
+      ],
+      [
+       0.03,
+       0.025
+      ],
+      [
+       0.01,
+       0.025
+      ],
+      [
+       0.01,
+       0.01
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "patch_id": "S2",
+    "label": "synthetic patch",
+    "source_date": "2020"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       0.04,
+       0.012
+      ],
+      [
+       0.05,
+       0.012
+      ],
+      [
+       0.05,
+       0.022
+      ],
+      [
+       0.04,
+       0.022
+      ],
+      [
+       0.04,
+       0.012
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

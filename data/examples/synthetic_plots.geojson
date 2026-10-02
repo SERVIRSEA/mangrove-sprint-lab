@@ -1,0 +1,51 @@
+{
+ "type": "FeatureCollection",
+ "x_lab": {
+  "synthetic": true,
+  "note": "SYNTHETIC: invented shapes near 0,0 for exercising the software offline. Not real mangroves, not evidence."
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Synthetic plot 1",
+    "label": "synthetic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.012,
+     0.015
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Synthetic plot 2",
+    "label": "synthetic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.022,
+     0.015
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "name": "Synthetic plot 3",
+    "label": "synthetic"
+   },
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.032,
+     0.015
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+# Source catalogue. One entry per dataset the sprint may use. Fill each field from the
+# publisher; write `unconfirmed` rather than guessing. Real data stays outside Git; record its
+# path or link here. `msl prepare` reports missing and unconfirmed fields.
+sources:
+  - id: synthetic_extent_2020
+    synthetic: true
+    title: SYNTHETIC mangrove extent, date A
+    owner_publisher: Mangrove Sprint Lab (fixture)
+    link_or_path: examples/synthetic_mangrove_extent_2020.geojson
+    version_date: "2020-01"
+    coverage: invented area near 0,0
+    format: GeoJSON polygons
+    crs: EPSG:4326
+    resolution: not applicable (vector)
+    units_or_legend: presence polygons
+    licence: CC0-1.0
+    access_restrictions: none
+    intended_use: offline software testing only
+    validation_status: synthetic, not evidence
+    workflow_step: step 1 preparation
+  - id: synthetic_extent_2024
+    synthetic: true
+    title: SYNTHETIC mangrove extent, date B
+    owner_publisher: Mangrove Sprint Lab (fixture)
+    link_or_path: examples/synthetic_mangrove_extent_2024.geojson
+    version_date: "2024-01"
+    coverage: invented area near 0,0
+    format: GeoJSON polygons
+    crs: EPSG:4326
+    resolution: not applicable (vector)
+    units_or_legend: presence polygons
+    licence: CC0-1.0
+    access_restrictions: none
+    intended_use: offline software testing only
+    validation_status: synthetic, not evidence
+    workflow_step: step 1 preparation
+  - id: candidate_extent_source
+    # Template for the first real source. Every value must come from the publisher.
+    title: unconfirmed
+    owner_publisher: unconfirmed
+    link_or_path: unconfirmed
+    version_date: unconfirmed
+    coverage: unconfirmed
+    format: unconfirmed
+    crs: unconfirmed
+    resolution: unconfirmed
+    units_or_legend: unconfirmed
+    licence: unconfirmed
+    access_restrictions: unconfirmed
+    intended_use: compare mangrove extent between two comparable dates
+    validation_status: unconfirmed
+    workflow_step: step 1 preparation

@@ -1,0 +1,20 @@
+# SYNTHETIC example that DOES fit a published contract (vector, Point features). It exercises
+# preview -> submit gates -> status. It still cannot be sent as-is:
+#   - replace YOURINITIALS (2-6 lower-case letters) and the placeholder URL;
+#   - `submit` also needs --confirm <environment> and --allow-synthetic.
+# Sending publishes under YOUR account; the platform may auto-approve and names cannot be
+# overwritten. Agree with the team before sending anything (docs/ACCEPTANCE.md).
+kind: vector
+layer: mangrove_plots_test_YOURINITIALS
+url: https://REPLACE-WITH-DIRECT-DOWNLOAD-LINK/synthetic_plots.geojson
+title: SYNTHETIC mangrove survey plots, TEST (not real data)
+description: Three invented points near 0,0 used only to test the contribution path. Not evidence.
+source: Mangrove Sprint Lab synthetic fixture
+license: CC0-1.0
+vintage: "2026-10"
+name_field: name
+x_lab:
+  synthetic: true
+  theme: mangrove
+  geometry: point
+  source_reference: data/examples/synthetic_plots.geojson

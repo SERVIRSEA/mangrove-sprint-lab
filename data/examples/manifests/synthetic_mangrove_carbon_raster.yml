@@ -1,0 +1,17 @@
+# SYNTHETIC example. Shows a contract GAP: the raster kind expects hazard_/risk_/vulnerability_
+# class maps (1-5) or a population_ count grid. A mangrove carbon raster is neither, and the
+# lab will not rename or reclassify it to fit. No raster file is included.
+kind: raster
+layer: mangrove_carbon_synthetic_test
+url: https://REPLACE-WITH-DIRECT-DOWNLOAD-LINK/mangrove_carbon.tif
+title: SYNTHETIC mangrove above-ground carbon (not real data)
+description: Placeholder for a carbon-density raster in Mg C per hectare.
+source: Mangrove Sprint Lab synthetic fixture
+license: CC0-1.0
+vintage: "2024-01"
+legend: unconfirmed
+declared: {dtype: float32, valid_min: 0, valid_max: 500, nodata: -9999}
+x_lab:
+  synthetic: true
+  theme: mangrove
+  source_reference: none (no file; contract illustration only)

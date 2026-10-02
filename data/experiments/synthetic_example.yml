@@ -1,0 +1,18 @@
+# SYNTHETIC example experiment. Replace with the sprint's agreed area, question and sources.
+experiment_id: msl-synthetic-001
+x_lab:
+  synthetic: true
+area:
+  name: SYNTHETIC area near 0,0 (placeholder, not a real place)
+  boundary: unconfirmed
+question: How did mangrove extent change between two comparable source dates within the agreed area?
+dates:
+  date_a: "2020-01"
+  date_b: "2024-01"
+expected_output: Mangrove area at each date and the change between them, with every source cited.
+method:
+  status: pending
+  note: To be agreed by the sprint team. This lab does not choose a method.
+sources:
+  - synthetic_extent_2020
+  - synthetic_extent_2024

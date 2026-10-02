@@ -1,0 +1,15 @@
+# SYNTHETIC example. Shows a contract GAP: the vector kind accepts Point features only, so a
+# mangrove extent polygon layer has no published contribution kind. `msl check` names the gap.
+kind: vector
+layer: mangrove_extent_synthetic_test
+url: https://REPLACE-WITH-DIRECT-DOWNLOAD-LINK/synthetic_mangrove_extent_2020.geojson
+title: SYNTHETIC mangrove extent polygons (not real data)
+description: Invented polygons near 0,0 used only to exercise the lab offline.
+source: Mangrove Sprint Lab synthetic fixture
+license: CC0-1.0
+vintage: "2020-01"
+x_lab:
+  synthetic: true
+  theme: mangrove
+  geometry: polygon
+  source_reference: data/examples/synthetic_mangrove_extent_2020.geojson

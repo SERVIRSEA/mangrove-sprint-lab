@@ -1,0 +1,38 @@
+[project]
+name = "mangrove-sprint-lab"
+version = "0.1.0"
+description = "Small client for experimenting with the SERVIR platform during the mangrove sprint"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28,<1",
+    "jsonschema>=4.20,<5",
+    "mcp>=1.30,<2",
+    "pyyaml>=6,<7",
+]
+
+[project.scripts]
+msl = "mangrove_sprint_lab.application.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.11.23,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8,<9",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["mangrove_sprint_lab", "conftest"]
